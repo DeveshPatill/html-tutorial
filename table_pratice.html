@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Table</title>
+        <meta name="viewport" content="width=device-width, 
+                                   initial-scale=1.0">
+        <title>row and col Span Pratice</title>
+        <style>
+            h1{
+                text-align: center;
+                color: green;
+            }
+            h2{
+                text-align: center;
+                color: green;
+            }
+            table{
+                width: 100%;
+                border: 1px solid grey;
+                border-collapse: collapse;   
+            }
+            th,
+            td{
+                padding: 10px;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <strong><h1>Row and Col Span Pratice</h1></strong>
+        <h2>Table ColSpan Pratice</h2>
+        
+        <table>
+            <tr>
+                <th colspan="2">Name</th>
+                <th>class</th>
+            </tr>
+            <tr>
+                <td>devesh</td>
+                <td>patil</td>
+                <td>1st</td>
+            </tr>
+            <tr>
+                <td>deep</td>
+                <td>rajj</td>
+                <td>8th</td>
+            </tr>
+            <tr>
+                <td>sukhdeep</td>
+                <td>patel</td>
+                <td>9th</td>
+            </tr>
+            <tr>
+                <td>rajrathna</td>
+                <td>swarajha</td>
+                <td>8th</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+        <hr>
+
+        <!-------ANOTHER TABLE----------------------------------->
+        <h2>Table RowSpan Pratice</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th rowspan="6">DADE ACADEMY</th>
+            </tr>
+            <tr>
+                <td>devesh</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>sarvesh</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>jill</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>bill</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>greem amron</td>
+                <td>16</td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+        <hr>
+
+        <!--------ANOTHER TABLE-------------------------------------------------------------->
+        <h2>Table with Rowspan and Colspan</h2>
+        <table>
+            <tr>
+                <th colspan="2">Name</th>
+                <th >Class</th>
+                <th >School</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Ankush</td>
+                <td rowspan="2">shinde</td>
+                <td>11</td>
+                <td rowspan="2">MVM SCHOOL</td>
+            </tr>
+            <tr>
+                <td>A</td>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Dev</td>
+                <td rowspan="2">Patil</td>
+                <td>12</td>
+                <td rowspan="2">DADE</td>
+            </tr>
+            <tr>
+                <td>B</td>
+            </tr>
+
+        </table>
+    </body>
+</html> 
