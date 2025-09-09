@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-COMPITABLE" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>personal portfolio website </title>
+     <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/7c125a7b3c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+          <img src="./Screenshot 2024-04-28 213313.png" class="logo">
+          <ul id="sidemenu">
+               <li><a href="#header">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#services">Services</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
+               <li><a href="#contact">Contact</a></li>
+               <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>   
+        <div class="header-text">
+            <p>Bsc.IT Student/UIUX</p>
+            <h1>Hi, I'm<span> Devesh</span><br> Patil From India</h1>  
+     </div>
+   </div>
+</div>
+<!--------about---------------------->
+<div id="about"></div>
+    <div class="container">
+       <div class="row">
+          <div class="about-col-1">
+               <img src="./user.png">
+
+          </div>
+          <div class=".about-col-2">
+               <h1 class="sub-title">About Me</h1>
+               <p>Hello! My Name is  Devesh Vijay Patil and i enjoy creting things that live on internet.
+               My intrest in web development started recently when i decided to try making websites apllications 
+               taught me a lot about HTML & CSS!
+               fast forward to today my main focus these days is building accesible websites and digital experience.i also recently working on a website that u need using html css javascript.</p>
+
+               <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+               </div>
+               <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                         <li><span>UI/UX</span><br>Designing Web/app Interfaces</li>
+                         <li><span>Web Development</span><br>Web/app devlopment</li>
+                         <li><span>App development</span><br>building android/ios apps </li>
+                    </ul>
+               </div>
+               <div class="tab-contents" id="experience">
+                    <ul>
+                         <li><span>2024</span><br>ST Rocks College</li>
+                         <li><span>2023</span><br>ST Rocks College</li>
+                         <li><span>2024</span><br>self </li>
+                    </ul>
+               </div>
+               <div class="tab-contents" id="education">
+                    <ul>
+                         <li><span>2024</span><br>ST Rocks College</li>
+                         <li><span>2023</span><br>ST Rocks College</li>
+                         <li><span>2024</span><br>self </li>
+                    </ul>
+               </div>
+          </div>
+       </div>
+     </div>
+</div>
+<!-----------------------services-------------->
+<div id="services">
+     <div class="container">
+          <h1 class="sub-title">My Services</h1>
+          <div class="services-list">
+               <div>
+                    <i class="fa-sharp fa-solid fa-code"></i>
+                    <h2>web Design</h2>
+                    <P>hey my name is devesh and i live in my own space want to know more just subscribe
+                    my website</P>
+                    <a href="#">Learn more</a>
+               </div>
+               <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX</h2>
+                    <P>hey my name is devesh and i live in my own space want to know more just subscribe
+                    my website</P>
+                    <a href="#">Learn more</a>
+               </div>
+               <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App design</h2>
+                    <P>hey my name is devesh and i live in my own space want to know more just subscribe
+                    my website</P>
+                    <a href="#">Learn more</a>
+          </div>
+     </div>
+</div>
+<!---------------portfolio-------------------------->
+<div id="portfolio">
+     <div class="container">
+          <h1 class="sub-title">My Work</h1>
+          <div class="work-list">
+              <div class="Work">
+                   <img src="./work-1.png" alt="work-1">
+                   <div class="layer">
+                    <h3>Social Media App</h3>
+                    <P>The App connects u too the talented people around the world.
+                    Download it from the playstore</P>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                   </div>
+              </div>
+              <div class="Work">
+                   <img src="./work-2.png" alt="work-2">
+                   <div class="layer">
+                    <h3>Music App</h3>
+                    <P>The App connects u too the talented people around the world.
+                    Download it from the playstore</P>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                   </div>
+              </div> 
+              <div class="Work">
+                   <img src="./work-3.png" alt="work-3">
+                   <div class="layer"> 
+                    <h3>Online Shopping App</h3>
+                    <P>The App connects u too the talented people around the world.
+                    Download it from the playstore</P>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                   </div>
+              </div>           
+          </div>
+          <a href="#" class="btn">See More</a>
+     </div>
+</div>
+<!------------------------contact--------------------------------------------------->
+<div id="contact">
+     <div class="container">
+          <div class="row">
+               <div class="contact-left">
+                    <div class="contact-right">
+                         <h1 class="sub-title">Contact me</h1>
+                         <p><i class="fa-solid fa-paper-plane"></i>patildevesh677@gmail.com</p>
+                         <p><i class="fa-solid fa-phone"></i>9833142939</p>
+                         <div class="social-icons">
+                              <a href=""><i class="fa-brands fa-facebook"></i></a>
+                              <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                              <a href=""><i class="fa-brands fa-instagram"></i></a>
+                              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                         </div>
+                         <a href="C:\Users\DEVESH PATIL\Desktop\images\images\my-cv.pdf" download class="btn btn2">Download Cv</a>
+                    </div>
+                    <div class="content-right">
+                         <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                         </form>
+                         <span id="msg"></span>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="copyright">
+          <p>copyright &copy; made <i class="fa-solid fa-heart"></i> by devesh patil</p>
+
+     </div>
+</div>
+
+
+<script>
+    
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(event, tabname){
+        for(tablink of tablinks){
+          console.log('tablink', tablink[0])
+            tablink[0].classlist.remove("active-link");        
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classlist.remove("active-tab");
+        }
+        event.currentTarget.classlist.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+     }
+
+</script>
+
+<script>
+     var sidemenu = document.getElementById("sidemenu");
+
+     function openmenu(){
+          sidemenu.style.right = "0";
+     }
+     function closemenu(){
+          sidemenu.style.right = "-200px"
+     }
+
+</script>
+<script>
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbxzLrDTzYgLTSnVN2UqbzoJxa-amO0tSLWMKRMmB66k5l_rjHoLqtmYkWY2XgobmzZflA/exec'
+     const form = document.forms['submit-to-google-sheet']
+     const msg = document.getElementById("msg")
+   
+     form.addEventListener('submit', e => {
+       e.preventDefault()
+       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+         .then(response => {
+          msg.innerHTML = "Message sent succesfully"
+          setTimeout(function(){
+               msg.innerHTML = ""
+          },5000)
+          form.reset()
+         })
+         .catch(error => console.error('Error!', error.message))
+     })
+   </script>
+</body>
+</html>
