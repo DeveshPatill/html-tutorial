@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML TABLE</title>
+        <style>
+            h2{
+                text-align: center;
+                color: blueviolet;
+            }
+            table {
+                text-align: center;
+                border: 1px solid black;
+            }
+            td {
+                border: 2px solid black;
+                /* height: 200px; */
+            }
+        </style>
+    </head>
+    <body>
+        <h2>html basic table structure</h2>
+        <img src="C:\Users\DEVESH PATIL\Pictures\Nested-1.png" alt="structure for refrencing and praticing" height="500" width="650">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Device</td>
+                    <td>Brand</td>
+                    <td colspan="3">Specifications</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">smartphone</td>
+                    <td rowspan="3">Apple</td>
+                    <td colspan="2">
+                        <table style="width: 100%;">
+                            <td style="width: 90%;">model</td>
+                            <td >storage</td>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>iphone 12 pro</td>
+                    <td>256 GB</td>
+                </tr>
+                <tr>
+                    <td>iphone SE</td>
+                    <td>128 GB</td>
+                </tr>
+                <tr>
+                    <td>Laptop</td>
+                    <td>HP</td>
+                    <td colspan="2">15.6"Display</td>
+                </tr>
+                <tr>
+                    <td>Laptop</td>
+                    <td>Samsung</td>
+                    <td colspan="2">10.5"Display</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
