@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1 {
+    color: blueviolet;
+    text-align: center;
+    text-shadow:0cap;
+}
+.box {
+    color: brown;
+    background-color: burlywood;
+    display: inline;
+    font-size: 70px; 
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 15px;
+}
+
