@@ -1,0 +1,49 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+html {
+    font-size: 15px;
+}
+.box {
+    border: 2px solid black;
+    /* width: 1536px; */
+    width: 80vw;
+    height: 5vh;
+    margin: auto;
+    font-size: 29px;
+    background-color: aqua;
+}
+.container {
+    border: 2px solid black;
+    /* width: 1536px; */
+    width: 80vw;
+    height: 30vh;
+    /* font-size: 20px; */
+    /* jabhi bhi horizontal and vertical margin ko seperate krna hai toh
+    margin property istemal kr satey hai (top bottom 23px) and
+     auto for left right horizontally (auto)   */
+    margin: 25px auto;
+    background-color: aqua;
+    min-height: 55vh;
+
+}
+.container p {
+    font-size: 2rem;
+}
+.mycontainer {
+    /* background-color: antiquewhite; */
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin: 25px auto;
+    color: black;
+    font-size: 22px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 50px ;
+    /* vmin and vmax from here */
+    width: 80vw;
+}
+
