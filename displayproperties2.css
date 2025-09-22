@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container1{
+    background-color: grey;
+    color: black;
+    margin: 10px;
+    padding: 25px;
+    margin: 20px;
+    /* display: contents; */
+    /* display: none; */
+
+    /* multi-keyword syntax */
+    /* display: block flex; */
+    /* display: block flow; */
+    /* display: flow-root; */
+    /* display: block grid; */
+    /* display: inline-flex; */
+    /* display: inline flow-root; */
+    /* display: inline grid ; */
+
+    /* other values */
+    /* display: table; */
+    /* display: table-row; */
+    /* display: list-item; */
+
+    /* Global values */
+    /* display: inherit; */
+    /* display: initial; */
+    /* display: revert; */
+    /* display: revert-layer; */
+    /* display: unset; */
+    
+}
+.box1{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    
+}
+.box2{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    
+}
+.box3{
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+}
+p{
+    background-color: greenyellow;
+}
+
+
+
+.container2{
+    background-color: grey;
+    color: black;
+    margin: 10px;
+    padding: 25px;
+    margin: 20px;
+
+}
+.fox1{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    
+}
+.fox2{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    
+}
+.fox3{
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.container3{
+    background-color: grey;
+    color: black;
+    margin: 10px;
+    padding: 25px;
+    margin: 20px;
+    /* display: inline-table; */
+
+}
+.dox1{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+   
+    
+}
+.dox2{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    
+}
+.dox3{
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+}
