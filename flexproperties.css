@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /* this proprties is for aassignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    /* background-color: antiquewhite;
+    width: 400px;
+    height: 400px; */
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-rows: 2fr 2fr 2fr 2fr;
+    gap: 10px;
+    width: 700px;
+    height: 700px;
+    background-color: rgb(170, 113, 113);
+}
+.box {
+    /* width: 100px;
+    height: 100px; */
+    background-color: aqua;
+}
+
