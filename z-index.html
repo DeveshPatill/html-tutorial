@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            background-color: red;
+            z-index: 0;
+            top: 50px;
+            left: 50px;
+            position: absolute;
+        }
+        .box2 {
+            background-color: blue;
+            top: 70px;
+            left: 70px;
+            position: absolute;
+        }
+        .box3 {
+            background-color: green;
+            top:90px;
+            left: 90px;
+            position: absolute;
+        }
+        .box4{
+            background-color: yellow;
+            top: 110px;
+            left: 110px;
+            position: absolute;
+            /* z-index: ; */
+        }
+        .box5{
+            background-color: violet;
+            top: 130px;
+            left: 130px;
+            position: absolute;
+            z-index: -1;
+        }
+
+</style>
+</head>
+<body>
+
+<h1>The z-index Property</h1>
+<div class="div">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    <div class="box5">box5</div>
+</div>
+</body>
+</html>
