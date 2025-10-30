@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.createElement()</title>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <!--adding element such as paragraph and adding paragraph description to oparagraph-->
+    <script>
+        const newPara = document.createElement("p");
+        newPara.textContent = "I am  fullstack developer and i gonna hunt job next year";
+        document.getElementById("container").appendChild(newPara)
+    </script>
+</body>
+</html>
