@@ -1,0 +1,835 @@
+/* ----------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------ */
+:root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(230, 75%, 98%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: var(--Magnolia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-card {
+    display: flex;
+    background-color: var(--White);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    padding: 15px;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    background-color: var(--Purplish-blue); 
+    background-image: url("C:/Users/DEVESH PATIL/Desktop/DEVESH1STLEC/multi-step-form/multi-step-form-main/assets/images/bg-sidebar-desktop.svg"); /* Using the actual image source for a closer match */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 275px;
+    color: var(--White);
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.step-indicator.active .step-number {
+    background-color: var(--Light-blue);
+    color: var(--Marine-blue);
+    border-color: var(--Light-blue);
+}
+
+.step-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--Light-gray);
+}
+
+.step-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem !important;
+    color: var(--White) !important;
+}
+
+/* --- Main Form Styles --- */
+.form-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Important for pushing nav to the bottom */
+    padding: 40px 100px 15px 100px;
+}
+
+.main-title {
+    color: var(--Marine-blue);
+    margin-bottom: 8px;
+}
+
+.sub-title {
+    color: var(--Cool-gray);
+    margin-bottom: 35px;
+}
+
+/* Key Step Logic: Hide all steps except the active one */
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+/* --- Step 1 Styles --- */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    color: var(--Marine-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--Light-gray);
+    border-radius: 8px;
+    color: var(--Marine-blue);
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.form-group input:focus {
+    border-color: var(--Purplish-blue);
+}
+
+/* --- Step 2 Styles (Plan Selection) --- */
+.plan-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.plan-card {
+    flex: 1;
+    border: 1px solid var(--Light-gray);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+.plan-card:hover {
+    border-color: var(--Purplish-blue);
+}
+.plan-card.active {
+    border-color: var(--Purplish-blue);
+    background-color: var(--Alabaster);
+}
+.plan-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+}
+.plan-name {
+    display: block;
+    color: var(--Marine-blue);
+    font-weight: 700;
+}
+.plan-price {
+    display: block;
+    color: var(--Cool-gray);
+    font-size: 0.9rem;
+}
+
+/* Billing Toggle Switch */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Alabaster);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.billing-toggle span {
+    color: var(--Cool-gray);
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.billing-toggle span.active-billing {
+    color: var(--Marine-blue);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Marine-blue);
+    transition: 0.4s;
+    border-radius: 34px;
+    width: 35px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--Marine-blue);
+}
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* --- Step 3 Styles (Add-ons) --- */
+.addon-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.addon-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--Light-gray);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+.addon-card:hover {
+    border-color: var(--Purplish-blue);
+}
+.addon-card.active {
+    border-color: var(--Purplish-blue);
+    background-color: var(--Alabaster);
+}
+.addon-card input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    accent-color: var(--Purplish-blue);
+    cursor: pointer;
+}
+.addon-card .addon-details {
+    flex-grow: 1;
+}
+.addon-card .addon-name {
+    display: block;
+    color: var(--Marine-blue);
+    font-weight: 500;
+}
+.addon-card .addon-desc {
+    font-size: 0.8rem;
+    color: var(--Cool-gray);
+}
+.addon-card .addon-price {
+    color: var(--Purplish-blue);
+    font-size: 0.9rem;
+}
+
+/* Hide the checkbox input to use the label as the clickable area */
+.addon-card input[type="checkbox"][hidden] {
+    display: none; 
+}
+
+
+/* --- Step 4 Styles (Summary) --- */
+.summary-box {
+    background-color: var(--Alabaster);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.summary-box #summary-plan-details {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--Light-gray);
+    margin-bottom: 15px;
+}
+.summary-box .plan-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.summary-box .plan-name-summary {
+    color: var(--Marine-blue);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.summary-box .plan-name-summary a {
+    display: block;
+    color: var(--Cool-gray);
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 3px;
+    transition: color 0.3s;
+}
+.summary-box .plan-name-summary a:hover {
+    color: var(--Purplish-blue);
+}
+.summary-box .plan-price-summary {
+    color: var(--Marine-blue);
+    font-weight: 700;
+}
+.summary-box .addon-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.summary-box .addon-line .addon-name-summary {
+    color: var(--Cool-gray);
+}
+.summary-box .addon-line .addon-price-summary {
+    color: var(--Marine-blue);
+}
+
+.total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.total-box .total-label {
+    color: var(--Cool-gray);
+}
+.total-box .total-price {
+    color: var(--Purplish-blue);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* --- Navigation Styles --- */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 10px; /* Adjusted to fit within the card padding */
+}
+
+.nav-btn-next {
+    background-color: var(--Marine-blue);
+    color: var(--White);
+}
+
+.nav-btn-submit {
+    background-color: var(--Purplish-blue); /* The brighter blue/purple for final confirm */
+    color: var(--White);
+}
+
+.nav-btn-submit:hover {
+    background-color: #928cff; /* Lighter shade on hover */
+}
+
+.nav-btn-next, .nav-btn-submit {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+.nav-btn-next:hover, .nav-btn-submit:hover {
+    opacity: 0.9;
+}
+
+.nav-btn-back {
+    background: none;
+    color: var(--Cool-gray);
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-btn-back:hover {
+    color: var(--Marine-blue);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* :root {
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --Cool-gray: hsl(231, 11%, 63%);
+    --Light-gray: hsl(229, 24%, 87%);
+    --Magnolia: hsl(217, 100%, 97%);
+    --Alabaster: hsl(230, 75%, 98%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu' sans-serif;
+}
+
+body{
+    background-color: var(--Magnolia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-card {
+    display: flex;
+    background-color: var(--White);
+    border-radius: 13px;
+    box-shadow: 0 10px 25px rgba(0,0,0, 0.1);
+    width: 900px;
+    padding: 15px;
+}
+
+.sidebar {
+    background-color: var(--Purplish-blue);
+    background-image: url("C:/Users/DEVESH PATIL/Desktop/DEVESH1STLEC/multi-step-form/multi-step-form-main/assets/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    min-width: 275px;
+    color: var(--White);
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.step-number {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.step-indicator.active .step-number{
+    background-color: var(--Light-blue);
+    color: var(--Marine-blue);
+    border-color: var(--Light-blue);
+}
+
+.step-info p {
+    margin: 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    opacity: 10;
+}
+
+.step-title {
+    font-weight: bold;
+    font-size: 0.9em ;
+    opacity: 1;
+}
+
+/* ---------------       Main Form Styles     ----------------------------------- */
+
+/* .form-main {
+    flex-grow: 1;
+    padding: 40px 100px 15px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-title {
+    color: var(--Marine-blue);
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    color: var(--Cool-gray);
+    margin-bottom: 35px;
+} */
+
+/* Key Step Logic: Hide all steps except the active one */
+/* .step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}  */
+
+/* --- Step 1 Styles --- */
+/* .form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--Marine-blue);
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 5px; 
+} */
+
+/* .form-group input {
+    width: 110%;
+    padding: 12px;
+    border: 1px solid var(--Light-gray);
+    border-radius: 8px;
+    color: var(--Marine-blue);
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.3s;  
+}
+
+.form-group input:focus {
+    border-color: var(--Purplish-blue);
+} */
+
+/* --- Step 2 Styles (Plan Selection) --- */
+
+/* .plan-options {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px; 
+}
+.plan-card {
+    flex: 1;
+    border: 1px solid var(--Light-gray);
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+.plan-card:hover {
+    border-color: var(--Purplish-blue);
+}
+
+.plan-card.active {
+    border-color: var(--Purplish-blue);
+    background-color: var(--Alabaster);
+}
+
+.plan-card img {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 45px;
+}
+
+.plan-name {
+    display: block;
+    color: var(--Marine-blue);
+    font-weight: 700;
+}
+
+.plan-price {
+    display: block;
+    color: var(--Cool-gray);
+    font-size: 0.9rem;
+} */
+
+/* Billing Toggle Switch */
+/* .billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Alabaster);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.billing-toggle span {
+    color: var(--Cool-gray);
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.billing-toggle span.active-billing {
+    color: var(--Marine-blue);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Marine-blue);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider::before{
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--White);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider{
+    background-color: var(--Marine-blue);
+}
+
+input:checked + .slider::before{
+    transform: translateX(18px);
+} */
+
+/* --- Step 3 Styles (Add-ons) --- */
+/* .addon-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addon-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--Light-gray);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.addon-card:hover{
+    border-color: var(--Purplish-blue);
+}
+
+.addon-card.active{
+    border-color: var(--Purplish-blue);
+    background-color: var(--Alabaster);
+}
+
+.addon-card input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    accent-color: var(--Purplish-blue);
+    cursor: pointer;
+}
+
+.addon-card .addon-details {
+    flex-grow: 1;
+}
+
+.addon-card .addon-name {
+    display: block;
+    color: var(--Marine-blue);
+    font-weight: 500;
+}
+
+.addon-card .addon-desc {
+    font-size: 0.8rem;
+    color: var(--Cool-gray);
+}
+
+.addon-card .addon-price {
+    color: var(--Purplish-blue);
+    font-size: 0.9rem;
+    margin-left: auto;
+} */
+
+/* Hide the checkbox input to use the label as the clickable area */
+/* .addon-card input[type="checkbox"][hidden] {
+    display: none; 
+} */
+
+/* --- Step 4 Styles (Summary) --- */
+/* .summary-plan-details{
+    justify-content: space-between;
+     background-color: var(--Alabaster);
+    padding: 20px;
+    border-bottom: 1px solid var(--Light-gray);
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.summary-type{
+    display: block;
+    color: var(--Cool-gray);
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: color 0.3s;
+    
+}
+.summary-type-price1{
+    position: relative;
+    left: 190px;
+    color: var(--Marine-blue);
+    font-weight: 500;
+}
+.summary-type-price2{
+    position: relative;
+    left: 220px;
+    bottom: 0.1px;
+    color: var(--Marine-blue);
+    font-weight: 500;
+}
+.total-price{
+   position: relative;
+   left: 210px;
+   font-weight: 800;
+   color: var(--Purplish-blue);
+}
+.total-label {
+    font-weight: 800;
+    font-style: normal;
+    color: var(--Cool-gray);
+}
+.summary-type-arcade{
+    color: var(--Marine-blue);
+    font-weight: 900;
+
+}
+.summary-type-change {
+    display: block;
+} */
+
+
+/* .line {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: var(--Light-gray);
+} */
+
+/* --- Navigation Styles --- */
+/* .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-top: auto;
+}
+
+.nav-btn-next, .nav-btn-submit{
+    background-color: #473dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.nav-btn-back {
+    background: none;
+    color: #9699ab; 
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.hidden {
+    visibility: hidden; 
+}  */
+
+
+
+
+
+
+
+
