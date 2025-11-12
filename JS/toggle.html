@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+         box-sizing: border-box;
+        }
+      .mystyle {
+        width: 100%;
+        height: 100vh;
+        /* padding: 25px; */
+        background-color: black ;
+        color: white;
+       
+      }
+      .my-button {
+        background-color: #b6c5d5; /* Blue */
+        color: white; 
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .myDIV {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDIV">
+        this is theme
+        <button onclick="myFunction()" class="my-button">Darkmode/Lightmode</button>
+    </div>
+    
+
+    <script>
+      function myFunction() {
+        var element = document.getElementById("myDIV");
+        element.classList.toggle("mystyle");
+      }
+    </script>
+  </body>
+</html>
