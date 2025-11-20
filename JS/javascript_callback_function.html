@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            padding: 20px 20px 20px;
+            background-color: lightgray;
+            margin: 10px 20px;
+        }
+        .btn{
+            background-color: white;
+            padding: 20px 10px ;
+            margin: 10px 10px 5px;
+        }
+        .green{
+            background-color: green;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .brown{
+            background-color: brown;
+        }
+        .cyan{
+            background-color: cyan;
+        }
+        .purple{
+            background-color: purple;
+        }
+        .violet{
+            background-color: violet;
+        }
+    </style>
+</head>
+<body id="body-container">
+    <div class="container">
+        <button id="green" class="btn green" >btn 1 green</button>
+        <button id="red" class="btn red ">btn 2 red</button>
+        <button id="blue" class="btn blue">btn 3 blue</button>
+        <button id="brown" class="btn brown">btn 4 brown</button>
+        <button id="cyan" class="btn cyan">btn 5 cyan</button>
+        <button id="purple" class="btn purple">btn 6 purple</button>
+        <button id="violet" class="btn violet">btn 7 violet</button>   
+    </div>
+
+    <script>
+        myvar = document.getElementById('body-container');
+        a = document.getElementById('green');
+        b = document.getElementById('red');
+        c = document.getElementById('blue');
+        d = document.getElementById('brown');
+        e = document.getElementById('cyan');
+        f = document.getElementById('purple');
+        j = document.getElementById('violet');
+
+        btn = document.getElementsByTagName('button');
+
+        a.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "green"
+        });
+
+        b.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "red"
+        });
+        c.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "blue"
+        });
+        d.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "brown"
+        });
+        e.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "cyan"
+        });
+        f.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "purple"
+        });
+        j.addEventListener("mouseenter", (e) => {
+            myvar.style.backgroundColor = "violet"
+        });
+
+        for(let i=0; i<7; i++){
+           btn[i].addEventListener("mouseleave", (e) => {
+            myvar.style.backgroundColor = "white"
+           });
+        }
+        
+    </script>
+    
+</body>
+</html>
