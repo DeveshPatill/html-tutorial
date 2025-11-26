@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4c542; /* yellow background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+     
+
+    .card {
+      background: white;
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 6px 6px 0px #000; /* shadow to the right and bottom */
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f4c542;
+      color: black;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 13px;
+      color: #555;
+      margin: 5px 0 10px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px 0 10px;
+      color: #111;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    .author span {
+      font-size: 14px;
+      font-weight: bold;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://via.placeholder.com/350x150.png?text=Image" alt="Card Image">
+    <div class="card-content">
+      <span class="tag">Learning</span>
+      <p class="date">Published 21 Dec 2023</p>
+      <h3 class="title">HTML & CSS foundations</h3>
+      <p class="description">
+        These languages are the backbone of every website, defining structure, content, and presentation.
+      </p>
+      <div class="author">
+        <img src="https://via.placeholder.com/28" alt="Author">
+        <span>Greg Hooper</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
